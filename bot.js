@@ -6,12 +6,12 @@ const prefix = "#"
 const code = '#'
 
 client.on('ready', () => {
-	client.user.setGame(`Codes Server.`,'https://www.twitch.tv/fofodiscord');
+	client.user.setGame(`Ultra Codes.`,'https://www.twitch.tv/fofodiscord');
   console.log(`Logged in as [ ${client.user.tag}! ]`);
 
 });
 
-
+cosnt emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
 client.on('message',async message => {
     if(message.content.startsWith(prefix + "js")) {
       const ayy = client.emojis.find(emoji => emoji.name === "GooD");
@@ -22,9 +22,9 @@ const m7twa = client.emojis.get("501785575968210946");
 let customemojis = client.emojis.find(r => r.name === 'GooD');
 let customemoji = client.emojis.find(r => r.name === 'BaD');
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-          let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`); 
+          let staff = message.guild.member(message.author).roles.find('name' , `share-room`); 
           if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
-    let jscodes = message.guild.channels.find(`name`, "discord-js");
+    let jscodes = message.guild.channels.find(`name`, "discord-js-codes");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
@@ -85,9 +85,9 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 \`\`\`js
 ${thisMessage}\`\`\`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-**وصف الكود**: ${boi}
-**تم النشر بواسطة**: ${message.author}
-**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+${emojis.arrow}**وصف الكود**: ${boi}
+${emojis.arrow}**تم النشر بواسطة**: ${message.author}
+${emojis.arrow}**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
   message.react("✅").then(() => message.react("❌"))
 
 
@@ -538,7 +538,7 @@ client.on('message', async message =>{
 
   let sicon = message.author.displayAvatarURL;
 
-  if(cmd === `${prefix}help`) {
+  if(cmd === `${prefix}help-staff`) {
 
       var bots = new Discord.RichEmbed()
 
@@ -680,7 +680,7 @@ client.on('message', async rokz => {
 
 [${lang}]`)
 
-              let rokzz = rokz.guild.channels.find("name","submissions")
+              let rokzz = rokz.guild.channels.find("name","تقديمات")
 
               setTimeout(() => {
 
@@ -690,9 +690,9 @@ client.on('message', async rokz => {
 
               rokzz.send(`
 
-» اللغة : **${lang}**
-» المدة : **${time}**
-» الخبرة : **${expe}**
+${emojis.arrow}اللغة : **${lang}**
+${emojis.arrow}المدة : **${time}**
+${emojis.arrow}الخبرة : **${expe}**
 
 تم التقديم بواسطة: ${rokz.author}
 `).then(rokzzz => {
@@ -738,7 +738,7 @@ if(!mention) return message.reply("منشن شخص");
 
 
 Room.send(`
-**» العضو :** ${mention}
+**${emojis.arrow} العضو :** ${mention}
 
 [ :x: ] :: لقد تم رفض العضو`);
 
@@ -765,7 +765,7 @@ if(!mention) return message.reply("منشن شخص");
 
 
 Room.send(`
-**» العضو :** ${mention}
+**${emojis.arrow} العضو :** ${mention}
 
 [ :white_check_mark: ] :: لقد تم قبول العضو واعطائه رتبة سبورت`);
 
@@ -785,9 +785,9 @@ if(message.content ===  prefix + "help"){
 .setTimestamp()
 
 .addField("─══════ {✯**Choose**✯} ══════─",' ‎ ')
-.addField(" **❧#help1 ➺      ⦁قائمة الاكواد ⦁  **",' ‎ ')
-.addField("**❧#help2 ➺      ⦁ أوامر عامة ⦁** ",' ‎ ')
-.addField("**❧#help3 ➺      ⦁ أوامر الأدارة + السبورت ⦁**",' ‎ ')
+.addField(" **${emojis.arrow}#help1 ➺      ⦁قائمة الاكواد ⦁  **",' ‎ ')
+.addField("**${emojis.arrow}#help2 ➺      ⦁ أوامر عامة ⦁** ",' ‎ ')
+.addField("**${emojis.arrow}#help3 ➺      ⦁ أوامر الأدارة + السبورت ⦁**",' ‎ ')
  .addField("─══════ {✯**Codes Server**✯} ══════─",' ‎ ')
 
 .setFooter('Codes Server')
@@ -811,10 +811,10 @@ if (message.content  === prefix + "help1") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("❧  **#help-js  ➺      ⦁ قائمة أكواد الجافا سكربت**  ⦁",' ‎ ')
-.addField("❧  **#help-py  ➺      ⦁ قائمة أكواد البايثون**  ⦁",' ‎ ')
-.addField("❧  **#help-eris  ➺    ⦁ قائمة أكواد الإرس** ⦁",' ‎ ')
- .addField("❧  **#help-io  ➺      ⦁ قائمة أكواد الآي أو** ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-js  ➺      ⦁ قائمة أكواد الجافا سكربت**  ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-py  ➺      ⦁ قائمة أكواد البايثون**  ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-eris  ➺    ⦁ قائمة أكواد الإرس** ⦁",' ‎ ')
+ .addField("${emojis.arrow}  **#help-io  ➺      ⦁ قائمة أكواد الآي أو** ⦁",' ‎ ')
 
 .setFooter('Codes Server')
 
@@ -837,10 +837,10 @@ if (message.content  === prefix + "help-js") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("❧  **#help-js-source    ➺      ⦁ قسم السورس الأساسي** ⦁",' ‎ ')
-.addField("❧  **#help-js-admin     ➺      ⦁ قسم الأكواد الإدارية** ⦁",' ‎ ')
-.addField("❧  **#help-js-general   ➺      ⦁ قسم الأكواد العامة*** ⦁",' ‎ ')
- .addField("❧  **#help-js-welcome   ➺      ⦁ قسم أكواد الترحيب** ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-js-source    ➺      ⦁ قسم السورس الأساسي** ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-js-admin     ➺      ⦁ قسم الأكواد الإدارية** ⦁",' ‎ ')
+.addField("${emojis.arrow}  **#help-js-general   ➺      ⦁ قسم الأكواد العامة*** ⦁",' ‎ ')
+ .addField("${emojis.arrow}  **#help-js-welcome   ➺      ⦁ قسم أكواد الترحيب** ⦁",' ‎ ')
 	  .addField("❧  **#help-js-help      ➺      ⦁ قسم أكواد الهلب** ⦁",' ‎ ')
 			.addField("❧  **#help-js-bc        ➺      ⦁ قسم أكواد البرودكاست** ⦁",' ‎ ')
 .setFooter('Codes Server')
@@ -863,10 +863,10 @@ if (message.content  === prefix + "help-js-source") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("**#help-js-source-1  ➺      ⦁ السورس الأساسي**⦁",' ‎ ')
-.addField("**#help-js-source-2  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
-.addField("**#help-js-source-3  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
- .addField("**#help-js-source-4  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+.addField("**${emojis.arrow}#help-js-source-1  ➺      ⦁ السورس الأساسي**⦁",' ‎ ')
+.addField("**${emojis.arrow}#help-js-source-2  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+.addField("**${emojis.arrow}#help-js-source-3  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+ .addField("**${emojis.arrow}#help-js-source-4  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
 
 .setFooter('Codes Server')
 

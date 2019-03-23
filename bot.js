@@ -27,7 +27,7 @@ const m7twa = client.emojis.get("501785575968210946");
 let customemojis = client.emojis.find(r => r.name === 'GooD');
 let customemoji = client.emojis.find(r => r.name === 'BaD');
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-          let staff = message.guild.member(message.author).roles.find('name' , `share-room`); 
+          let staff = message.guild.member(message.author).roles.find('name' , `∘ - Support.`); 
           if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
     let jscodes = message.guild.channels.find(`name`, "discord-js-codes");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");

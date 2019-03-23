@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 });
 
-cosnt emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
+cosnt emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` }
 client.on('message',async message => {
     if(message.content.startsWith(prefix + "js")) {
       const ayy = client.emojis.find(emoji => emoji.name === "GooD");

@@ -308,7 +308,7 @@ message.react("📩")
 });
 
 client.on('message', async rokz => {
-
+var emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
     if(rokz.content.startsWith(prefix + "تقديم")) {
 
       let lang = '';

@@ -11,14 +11,12 @@ client.on('ready', () => {
 
 });
 
-client.on(`message`,async message => {
-const emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
-});
 
 
 client.on('message',async message => {
 
     if(message.content.startsWith(prefix + "js")) {
+const emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
       const ayy = client.emojis.find(emoji => emoji.name === "GooD");
 const nos = client.emojis.find(emoji => emoji.name === "BaD")
 const ter = client.emojis.get("501785113814761473");
@@ -90,9 +88,9 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 \`\`\`js
 ${thisMessage}\`\`\`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-**وصف الكود**: ${boi}
-**تم النشر بواسطة**: ${message.author}
-**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+${emojis.arrow}**وصف الكود**: ${boi}
+${emojis.arrow}**تم النشر بواسطة**: ${message.author}
+${emojis.arrow}**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
   message.react("✅").then(() => message.react("❌"))
 
 

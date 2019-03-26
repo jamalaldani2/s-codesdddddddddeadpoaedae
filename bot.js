@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = "#"
-const code = '#'
+const prefix = "-"
+const code = '-'
 
 client.on('ready', () => {
 	client.user.setGame(`Ultra Codes.`,'https://www.twitch.tv/fofodiscord');
@@ -82,7 +82,7 @@ ${emojis.arrow}**المصدر / الشخص الذي صنع الكود**: ${boi2}
 
                 })
 
-          }
+          
 
         }
 

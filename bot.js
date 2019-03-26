@@ -22,9 +22,9 @@ const m7twa = client.emojis.get("501785575968210946");
 let customemojis = client.emojis.find(r => r.name === 'GooD');
 let customemoji = client.emojis.find(r => r.name === 'BaD');
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-          let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`); 
+          let staff = message.guild.member(message.author).roles.find('name' , `∘ - Support.`); 
           if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
-    let jscodes = message.guild.channels.find(`name`, "discord-js");
+    let jscodes = message.guild.channels.find(`name`, "discord-js-codes");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
@@ -61,20 +61,7 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
                 .then(collected => {
                   collected.first().delete();
                 boi2 = collected.first().content;
-        msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
-   message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
-          max: 1,
-          time: 90000,
-          errors: ['time']
-        })
-        .then(collected => {
-          if(collected.first().content === 'لا') {
-            msg.delete();
-            message.delete();
-            thisFalse = false;
-          }
-          if(collected.first().content === 'نعم') {
-            if(thisFalse === false) return;
+ 
             msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
             collected.first().delete();
 
@@ -235,9 +222,9 @@ const m7twa = client.emojis.get("501785575968210946");
 let customemojis = client.emojis.find(r => r.name === 'GooD');
 let customemoji = client.emojis.find(r => r.name === 'BaD');
       if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-              let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`);
+              let staff = message.guild.member(message.author).roles.find('name' , `∘ - Support.`);
                if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
-        let htmlcodes = message.guild.channels.find(`name`, "discord-html");
+        let htmlcodes = message.guild.channels.find(`name`, "web-coding");
         if(!htmlcodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
           let filter = m => m.author.id === message.author.id;
           let thisMessage;

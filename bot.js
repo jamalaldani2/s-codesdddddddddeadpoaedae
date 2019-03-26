@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = "-"
-const code = '-'
+const prefix = "#"
+const code = '#'
 
 client.on('ready', () => {
 	client.user.setGame(`Ultra Codes.`,'https://www.twitch.tv/fofodiscord');
@@ -12,11 +12,8 @@ client.on('ready', () => {
 });
 
 
-
 client.on('message',async message => {
-
     if(message.content.startsWith(prefix + "js")) {
-const emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
       const ayy = client.emojis.find(emoji => emoji.name === "GooD");
 const nos = client.emojis.find(emoji => emoji.name === "BaD")
 const ter = client.emojis.get("501785113814761473");
@@ -25,9 +22,9 @@ const m7twa = client.emojis.get("501785575968210946");
 let customemojis = client.emojis.find(r => r.name === 'GooD');
 let customemoji = client.emojis.find(r => r.name === 'BaD');
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-          let staff = message.guild.member(message.author).roles.find('name' , `∘ - Support.`); 
+          let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`); 
           if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
-    let jscodes = message.guild.channels.find(`name`, "discord-js-codes");
+    let jscodes = message.guild.channels.find(`name`, "discord-js");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
@@ -64,6 +61,20 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
                 .then(collected => {
                   collected.first().delete();
                 boi2 = collected.first().content;
+        msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
+   message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+          max: 1,
+          time: 90000,
+          errors: ['time']
+        })
+        .then(collected => {
+          if(collected.first().content === 'لا') {
+            msg.delete();
+            message.delete();
+            thisFalse = false;
+          }
+          if(collected.first().content === 'نعم') {
+            if(thisFalse === false) return;
             msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
             collected.first().delete();
 
@@ -74,15 +85,15 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 \`\`\`js
 ${thisMessage}\`\`\`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-${emojis.arrow}**وصف الكود**: ${boi}
-${emojis.arrow}**تم النشر بواسطة**: ${message.author}
-${emojis.arrow}**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+**وصف الكود**: ${boi}
+**تم النشر بواسطة**: ${message.author}
+**المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
   message.react("✅").then(() => message.react("❌"))
 
 
                 })
 
-          
+          }
 
         }
 
@@ -102,11 +113,328 @@ ${emojis.arrow}**المصدر / الشخص الذي صنع الكود**: ${boi2}
 
 );
 
-   
+      })}});
 
 
 
-     
+  client.on('message',async message => {
+
+      if(message.content.startsWith(prefix + "py")) {
+        const ayy = client.emojis.find(emoji => emoji.name === "GooD");
+const nos = client.emojis.find(emoji => emoji.name === "BaD")
+const ter = client.emojis.get("501785113814761473");
+const Devt = client.emojis.get("501785041358028811");
+const m7twa = client.emojis.get("501785575968210946");
+let customemojis = client.emojis.find(r => r.name === 'GooD');
+let customemoji = client.emojis.find(r => r.name === 'BaD');
+    if(!message.channel.guild) return message.reply('This Command For Servers Only !');
+            let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`);
+             if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
+      let pycodes = message.guild.channels.find(`name`, "discord-py");
+      if(!pycodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
+        let filter = m => m.author.id === message.author.id;
+        let thisMessage;
+        let thisFalse;
+        message.channel.send(':pencil: **| من فضلك اكتب الكود الأن... :pencil2: **').then(msg => {
+    
+        message.channel.awaitMessages(filter, {
+          max: 1,
+          time: 90000,
+          errors: ['time']
+        })
+        .then(collected => {
+          collected.first().delete();
+          thisMessage = collected.first().content;
+          let boi;
+          msg.edit(':scroll: **| من فضلك اكتب وصف الكود الأن... :pencil2: **').then(msg => {
+    
+              message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 90000,
+                errors: ['time']
+              })
+              .then(collected => {
+                collected.first().delete();
+                boi = collected.first().content;
+                let boi2;
+                msg.edit(':man_in_tuxedo: **| من فضلك اكتب من صنع هذا الكود الأن... :pencil2: **').then(msg => {
+    
+                  message.channel.awaitMessages(filter, {
+                    max: 1,
+                    time: 90000,
+                    errors: ['time']
+                  })
+                  .then(collected => {
+                    collected.first().delete();
+                  boi2 = collected.first().content;
+          msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
+     message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+            max: 1,
+            time: 90000,
+            errors: ['time']
+          })
+          .then(collected => {
+            if(collected.first().content === 'لا') {
+              msg.delete();
+              message.delete();
+              thisFalse = false;
+            }
+            if(collected.first().content === 'نعم') {
+              if(thisFalse === false) return;
+              msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
+              collected.first().delete();
+
+              
+              pycodes.send(`@everyone | @here
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  **${message.guild.name}© :arrow_down:**     
+  \`\`\`py
+  ${thisMessage}\`\`\`
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  **وصف الكود**: ${boi}
+  **تم النشر بواسطة**: ${message.author}
+  **المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+    message.react("✅").then(() => message.react("❌"))
+  
+  
+  
+                })
+
+          }
+
+        }
+
+    );
+
+});
+
+      });
+
+    }
+
+      );
+
+    });
+
+}
+
+);
+
+      })}});
+  
+
+
+    client.on('message',async message => {
+
+        if(message.content.startsWith(prefix + "html")) {
+          const ayy = client.emojis.find(emoji => emoji.name === "GooD");
+const nos = client.emojis.find(emoji => emoji.name === "BaD")
+const ter = client.emojis.get("501785113814761473");
+const Devt = client.emojis.get("501785041358028811");
+const m7twa = client.emojis.get("501785575968210946");
+let customemojis = client.emojis.find(r => r.name === 'GooD');
+let customemoji = client.emojis.find(r => r.name === 'BaD');
+      if(!message.channel.guild) return message.reply('This Command For Servers Only !');
+              let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`);
+               if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
+        let htmlcodes = message.guild.channels.find(`name`, "discord-html");
+        if(!htmlcodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
+          let filter = m => m.author.id === message.author.id;
+          let thisMessage;
+          let thisFalse;
+          message.channel.send(':pencil: **| من فضلك اكتب الكود الأن... :pencil2: **').then(msg => {
+      
+          message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 90000,
+            errors: ['time']
+          })
+          .then(collected => {
+            collected.first().delete();
+            thisMessage = collected.first().content;
+            let boi;
+            msg.edit(':scroll: **| من فضلك اكتب وصف الكود الأن... :pencil2: **').then(msg => {
+      
+                message.channel.awaitMessages(filter, {
+                  max: 1,
+                  time: 90000,
+                  errors: ['time']
+                })
+                .then(collected => {
+                  collected.first().delete();
+                  boi = collected.first().content;
+                  let boi2;
+                  msg.edit(':man_in_tuxedo: **| من فضلك اكتب من صنع هذا الكود الأن... :pencil2: **').then(msg => {
+      
+                    message.channel.awaitMessages(filter, {
+                      max: 1,
+                      time: 90000,
+                      errors: ['time']
+                    })
+                    .then(collected => {
+                      collected.first().delete();
+                    boi2 = collected.first().content;
+            msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
+       message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+              max: 1,
+              time: 90000,
+              errors: ['time']
+            })
+            .then(collected => {
+              if(collected.first().content === 'لا') {
+                msg.delete();
+                message.delete();
+                thisFalse = false;
+              }
+              if(collected.first().content === 'نعم') {
+                if(thisFalse === false) return;
+                msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
+                collected.first().delete();
+
+                
+                htmlcodes.send(`@everyone | @here
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    **${message.guild.name}© :arrow_down:**     
+    \`\`\`html
+    ${thisMessage}\`\`\`
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    **وصف الكود**: ${boi}
+    **تم النشر بواسطة**: ${message.author}
+    **المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+      message.react("✅").then(() => message.react("❌"))
+    
+    
+    
+    
+                })
+
+          }
+
+        }
+
+    );
+
+});
+
+      });
+
+    }
+
+      );
+
+    });
+
+}
+
+);
+
+      })}});
+  
+
+      client.on('message',async message => {
+
+          if(message.content.startsWith(prefix + "eris")) {
+            const ayy = client.emojis.find(emoji => emoji.name === "GooD");
+const nos = client.emojis.find(emoji => emoji.name === "BaD")
+const ter = client.emojis.get("501785113814761473");
+const Devt = client.emojis.get("501785041358028811");
+const m7twa = client.emojis.get("501785575968210946");
+let customemojis = client.emojis.find(r => r.name === 'GooD');
+let customemoji = client.emojis.find(r => r.name === 'BaD');
+        if(!message.channel.guild) return message.reply('This Command For Servers Only !');
+                let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`);
+                 if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
+          let eriscodes = message.guild.channels.find(`name`, "discord-eris");
+          if(!eriscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
+            let filter = m => m.author.id === message.author.id;
+            let thisMessage;
+            let thisFalse;
+            message.channel.send(':pencil: **| من فضلك اكتب الكود الأن... :pencil2: **').then(msg => {
+        
+            message.channel.awaitMessages(filter, {
+              max: 1,
+              time: 90000,
+              errors: ['time']
+            })
+            .then(collected => {
+              collected.first().delete();
+              thisMessage = collected.first().content;
+              let boi;
+              msg.edit(':scroll: **| من فضلك اكتب وصف الكود الأن... :pencil2: **').then(msg => {
+        
+                  message.channel.awaitMessages(filter, {
+                    max: 1,
+                    time: 90000,
+                    errors: ['time']
+                  })
+                  .then(collected => {
+                    collected.first().delete();
+                    boi = collected.first().content;
+                    let boi2;
+                    msg.edit(':man_in_tuxedo: **| من فضلك اكتب من صنع هذا الكود الأن... :pencil2: **').then(msg => {
+        
+                      message.channel.awaitMessages(filter, {
+                        max: 1,
+                        time: 90000,
+                        errors: ['time']
+                      })
+                      .then(collected => {
+                        collected.first().delete();
+                      boi2 = collected.first().content;
+              msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
+         message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+                max: 1,
+                time: 90000,
+                errors: ['time']
+              })
+              .then(collected => {
+                if(collected.first().content === 'لا') {
+                  msg.delete();
+                  message.delete();
+                  thisFalse = false;
+                }
+                if(collected.first().content === 'نعم') {
+                  if(thisFalse === false) return;
+                  msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
+                  collected.first().delete();
+
+                  
+                  eriscodes.send(`@everyone | @here
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      **${message.guild.name}© :arrow_down:**     
+      \`\`\`eris
+      ${thisMessage}\`\`\`
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      **وصف الكود**: ${boi}
+      **تم النشر بواسطة**: ${message.author}
+      **المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
+        message.react("✅").then(() => message.react("❌"))
+
+                })
+
+          }
+
+        }
+
+    );
+
+});
+
+      });
+
+    }
+
+      );
+
+    });
+
+}
+
+);
+
+      })}});
+
+  
 
 
 const ytdl = require('ytdl-core');
@@ -210,7 +538,7 @@ client.on('message', async message =>{
 
   let sicon = message.author.displayAvatarURL;
 
-  if(cmd === `${prefix}help-staff`) {
+  if(cmd === `${prefix}help`) {
 
       var bots = new Discord.RichEmbed()
 
@@ -294,7 +622,7 @@ message.react("📩")
 });
 
 client.on('message', async rokz => {
-var emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940').emojis.find(e => e.name === 'arrow')}` };
+
     if(rokz.content.startsWith(prefix + "تقديم")) {
 
       let lang = '';
@@ -352,7 +680,7 @@ var emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940'
 
 [${lang}]`)
 
-              let rokzz = rokz.guild.channels.find("name","تقديمات")
+              let rokzz = rokz.guild.channels.find("name","submissions")
 
               setTimeout(() => {
 
@@ -362,9 +690,9 @@ var emojis   = { arrow: `${client.guilds.find(r => r.id === '553508691425361940'
 
               rokzz.send(`
 
-${emojis.arrow}اللغة : **${lang}**
-${emojis.arrow}المدة : **${time}**
-${emojis.arrow}الخبرة : **${expe}**
+» اللغة : **${lang}**
+» المدة : **${time}**
+» الخبرة : **${expe}**
 
 تم التقديم بواسطة: ${rokz.author}
 `).then(rokzzz => {
@@ -410,7 +738,7 @@ if(!mention) return message.reply("منشن شخص");
 
 
 Room.send(`
-**${emojis.arrow} العضو :** ${mention}
+**» العضو :** ${mention}
 
 [ :x: ] :: لقد تم رفض العضو`);
 
@@ -437,7 +765,7 @@ if(!mention) return message.reply("منشن شخص");
 
 
 Room.send(`
-**${emojis.arrow} العضو :** ${mention}
+**» العضو :** ${mention}
 
 [ :white_check_mark: ] :: لقد تم قبول العضو واعطائه رتبة سبورت`);
 
@@ -457,9 +785,9 @@ if(message.content ===  prefix + "help"){
 .setTimestamp()
 
 .addField("─══════ {✯**Choose**✯} ══════─",' ‎ ')
-.addField(" **${emojis.arrow}#help1 ➺      ⦁قائمة الاكواد ⦁  **",' ‎ ')
-.addField("**${emojis.arrow}#help2 ➺      ⦁ أوامر عامة ⦁** ",' ‎ ')
-.addField("**${emojis.arrow}#help3 ➺      ⦁ أوامر الأدارة + السبورت ⦁**",' ‎ ')
+.addField(" **❧#help1 ➺      ⦁قائمة الاكواد ⦁  **",' ‎ ')
+.addField("**❧#help2 ➺      ⦁ أوامر عامة ⦁** ",' ‎ ')
+.addField("**❧#help3 ➺      ⦁ أوامر الأدارة + السبورت ⦁**",' ‎ ')
  .addField("─══════ {✯**Codes Server**✯} ══════─",' ‎ ')
 
 .setFooter('Codes Server')
@@ -483,10 +811,10 @@ if (message.content  === prefix + "help1") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-js  ➺      ⦁ قائمة أكواد الجافا سكربت**  ⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-py  ➺      ⦁ قائمة أكواد البايثون**  ⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-eris  ➺    ⦁ قائمة أكواد الإرس** ⦁",' ‎ ')
- .addField("${emojis.arrow}  **#help-io  ➺      ⦁ قائمة أكواد الآي أو** ⦁",' ‎ ')
+.addField("❧  **#help-js  ➺      ⦁ قائمة أكواد الجافا سكربت**  ⦁",' ‎ ')
+.addField("❧  **#help-py  ➺      ⦁ قائمة أكواد البايثون**  ⦁",' ‎ ')
+.addField("❧  **#help-eris  ➺    ⦁ قائمة أكواد الإرس** ⦁",' ‎ ')
+ .addField("❧  **#help-io  ➺      ⦁ قائمة أكواد الآي أو** ⦁",' ‎ ')
 
 .setFooter('Codes Server')
 
@@ -509,10 +837,10 @@ if (message.content  === prefix + "help-js") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-js-source    ➺      ⦁ قسم السورس الأساسي** ⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-js-admin     ➺      ⦁ قسم الأكواد الإدارية** ⦁",' ‎ ')
-.addField("${emojis.arrow}  **#help-js-general   ➺      ⦁ قسم الأكواد العامة*** ⦁",' ‎ ')
- .addField("${emojis.arrow}  **#help-js-welcome   ➺      ⦁ قسم أكواد الترحيب** ⦁",' ‎ ')
+.addField("❧  **#help-js-source    ➺      ⦁ قسم السورس الأساسي** ⦁",' ‎ ')
+.addField("❧  **#help-js-admin     ➺      ⦁ قسم الأكواد الإدارية** ⦁",' ‎ ')
+.addField("❧  **#help-js-general   ➺      ⦁ قسم الأكواد العامة*** ⦁",' ‎ ')
+ .addField("❧  **#help-js-welcome   ➺      ⦁ قسم أكواد الترحيب** ⦁",' ‎ ')
 	  .addField("❧  **#help-js-help      ➺      ⦁ قسم أكواد الهلب** ⦁",' ‎ ')
 			.addField("❧  **#help-js-bc        ➺      ⦁ قسم أكواد البرودكاست** ⦁",' ‎ ')
 .setFooter('Codes Server')
@@ -535,10 +863,10 @@ if (message.content  === prefix + "help-js-source") {
 .setTimestamp()
 
 .addField("⦁`All types of codes in Codes Server Server 💬`⦁",' ‎ ')
-.addField("**${emojis.arrow}#help-js-source-1  ➺      ⦁ السورس الأساسي**⦁",' ‎ ')
-.addField("**${emojis.arrow}#help-js-source-2  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
-.addField("**${emojis.arrow}#help-js-source-3  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
- .addField("**${emojis.arrow}#help-js-source-4  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+.addField("**#help-js-source-1  ➺      ⦁ السورس الأساسي**⦁",' ‎ ')
+.addField("**#help-js-source-2  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+.addField("**#help-js-source-3  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
+ .addField("**#help-js-source-4  ➺      ⦁ السورس الأساسي مع الستريمنق ومعلومات البوت** ⦁",' ‎ ')
 
 .setFooter('Codes Server')
 

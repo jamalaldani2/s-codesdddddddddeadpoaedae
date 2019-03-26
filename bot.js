@@ -100,8 +100,6 @@ ${thisMessage}\`\`\`
 
 );
 
-      })}});
-
 
 
   client.on('message',async message => {
@@ -189,7 +187,7 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 
           }
 
-        }
+        
 
     );
 
@@ -207,8 +205,7 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 
 );
 
-      })}});
-  
+    
 
 
     client.on('message',async message => {
@@ -297,7 +294,7 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 
           }
 
-        }
+        
 
     );
 
@@ -315,111 +312,9 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 
 );
 
-      })}});
+   
   
 
-      client.on('message',async message => {
-
-          if(message.content.startsWith(prefix + "eris")) {
-            const ayy = client.emojis.find(emoji => emoji.name === "GooD");
-const nos = client.emojis.find(emoji => emoji.name === "BaD")
-const ter = client.emojis.get("501785113814761473");
-const Devt = client.emojis.get("501785041358028811");
-const m7twa = client.emojis.get("501785575968210946");
-let customemojis = client.emojis.find(r => r.name === 'GooD');
-let customemoji = client.emojis.find(r => r.name === 'BaD');
-        if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-                let staff = message.guild.member(message.author).roles.find('name' , `Codes Support`);
-                 if(!staff) return message.channel.send(`🛑 You Cant Do This Command`) 
-          let eriscodes = message.guild.channels.find(`name`, "discord-eris");
-          if(!eriscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
-            let filter = m => m.author.id === message.author.id;
-            let thisMessage;
-            let thisFalse;
-            message.channel.send(':pencil: **| من فضلك اكتب الكود الأن... :pencil2: **').then(msg => {
-        
-            message.channel.awaitMessages(filter, {
-              max: 1,
-              time: 90000,
-              errors: ['time']
-            })
-            .then(collected => {
-              collected.first().delete();
-              thisMessage = collected.first().content;
-              let boi;
-              msg.edit(':scroll: **| من فضلك اكتب وصف الكود الأن... :pencil2: **').then(msg => {
-        
-                  message.channel.awaitMessages(filter, {
-                    max: 1,
-                    time: 90000,
-                    errors: ['time']
-                  })
-                  .then(collected => {
-                    collected.first().delete();
-                    boi = collected.first().content;
-                    let boi2;
-                    msg.edit(':man_in_tuxedo: **| من فضلك اكتب من صنع هذا الكود الأن... :pencil2: **').then(msg => {
-        
-                      message.channel.awaitMessages(filter, {
-                        max: 1,
-                        time: 90000,
-                        errors: ['time']
-                      })
-                      .then(collected => {
-                        collected.first().delete();
-                      boi2 = collected.first().content;
-              msg.edit(':shield: **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
-         message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
-                max: 1,
-                time: 90000,
-                errors: ['time']
-              })
-              .then(collected => {
-                if(collected.first().content === 'لا') {
-                  msg.delete();
-                  message.delete();
-                  thisFalse = false;
-                }
-                if(collected.first().content === 'نعم') {
-                  if(thisFalse === false) return;
-                  msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
-                  collected.first().delete();
-
-                  
-                  eriscodes.send(`@everyone | @here
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-      **${message.guild.name}© :arrow_down:**     
-      \`\`\`eris
-      ${thisMessage}\`\`\`
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-      **وصف الكود**: ${boi}
-      **تم النشر بواسطة**: ${message.author}
-      **المصدر / الشخص الذي صنع الكود**: ${boi2}`).then(message => {
-        message.react("✅").then(() => message.react("❌"))
-
-                })
-
-          }
-
-        }
-
-    );
-
-});
-
-      });
-
-    }
-
-      );
-
-    });
-
-}
-
-);
-
-      })}});
 
   
 

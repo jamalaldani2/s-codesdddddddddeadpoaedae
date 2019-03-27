@@ -189,7 +189,7 @@ let customemoji = client.emojis.find(r => r.name === 'BaD');
 
         
 
-    );
+ 
 
 });
 
